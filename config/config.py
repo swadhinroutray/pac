@@ -10,7 +10,7 @@ OBSIDIAN_VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH", "./pac-summarized")
 
 # Models configuration
 WHISPER_MODEL = os.getenv("WHISPER_MODEL", "base")  # Options: tiny, base, small, medium, large
-SUMMARY_MODEL = "facebook/bart-large-cnn"
+SUMMARY_MODEL = os.getenv("SUMMARY_MODEL", os.getenv("SUMMARY_MODEL", "facebook/bart-large-cnn"))
 
 # Output configuration
 DEFAULT_OUTPUT_DIR = Path(OBSIDIAN_VAULT_PATH)

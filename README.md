@@ -32,7 +32,8 @@ cp .env.example .env
 
 # Edit .env with your preferred settings
 # OBSIDIAN_VAULT_PATH: Where to save the transcripts (default: ./pac-summarized)
-# WHISPER_MODEL: Model size to use (default: base)
+# WHISPER_MODEL: Speech model size (default: base)
+# SUMMARY_MODEL: Text summarization model (default: facebook/bart-large-cnn)
 ```
 
 ## Usage
@@ -73,7 +74,8 @@ make run AUDIO_FILE=/path/to/audio.mp3 VAULT_PATH=/path/to/output/dir
 
 ## Notes
 
-- The default Whisper model is "base". You can change this in `config/config.py` to other options: tiny, base, small, medium, large
+- The default Whisper model is "base". You can change this in `.env` using WHISPER_MODEL (options: tiny, base, small, medium, large)
+- The default summarization model is "facebook/bart-large-cnn". You can change this in `.env` using SUMMARY_MODEL
 - Larger models provide better transcription but require more computational resources
 - Audio files are not tracked in git to keep the repository size manageable
 
